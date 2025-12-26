@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="atco-logo">Logo</div>
+      <img src="src/assets/images/accrossthecreek_logo.png" alt="Across The Creek Organics Logo" className="atco-logo" />
       <h1>Across The Creek Organics</h1>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
