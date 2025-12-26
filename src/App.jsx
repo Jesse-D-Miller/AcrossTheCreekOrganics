@@ -10,11 +10,16 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<ProductContainer />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<div>Contact Form Placeholder</div>} />
-        </Routes>
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<ProductContainer />} />
+            <Route path="/about" element={<About />} />
+            <Route
+              path="/contact"
+              element={<div>Contact Form Placeholder</div>}
+            />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </BrowserRouter>
