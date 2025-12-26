@@ -1,8 +1,28 @@
-function Product({ name, description }) {
+
+function Product({ name, description, image }) {
   return (
-    <div className="product">
-      <h5>{name}</h5>
-      <p>{description}</p>
+    <div
+      className="product"
+      style={{
+        backgroundImage: `url(${image})`,
+      }}
+    >
+      <div className="product-content" style={{position: 'relative', zIndex: 2}}>
+        <h5>{name}</h5>
+        <p>{description}</p>
+      </div>
+
+      {/* image overlay, dark */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        background: 'rgba(0,0,0,0.3)',
+        zIndex: 1,
+        borderRadius: '2px',
+      }} />
     </div>
   );
 }

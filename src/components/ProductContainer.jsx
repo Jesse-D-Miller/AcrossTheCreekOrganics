@@ -5,7 +5,12 @@ function ProductContainer() {
   return (
     <div className="product-container">
       {potatoData.map((potato) => (
-        <Product key={potato.name} name={potato.name} description={potato.description} />
+        <Product
+          key={potato.name}
+          name={potato.name}
+          description={potato.description}
+          image={potato.image}
+        />
       ))}
     </div>
   );

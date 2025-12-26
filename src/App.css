@@ -1,9 +1,9 @@
 .App {
   font-family: Arial, sans-serif;
-  color: #262626;
+  color: var(--earth-dark);
   align-items: center;
   text-align: center;
-  background-color: #fafafa;
+  background-color: var(--earth-light);
 }
 
 /*==================================================== Navbar ====================================================*/
@@ -12,14 +12,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fafafa;
+  background-color: var(--earth-green);
   padding: 1rem;
-  color: #262626;
+  color: var(--earth-light);
   height: 150px;
-  border-bottom: #000000 1px solid;
+  border-bottom: 2px solid var(--earth-dark);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.navbar .atco-logo {
+  height: 100px;
+  width: 150px;
+  border: #000000 1px solid;
+}
+
+.navbar h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 /*==================================================== Navbar ====================================================*/
@@ -37,11 +55,16 @@
 
 .product {
   aspect-ratio: 1 / 1;
-  border: 1px solid #000000;
+  border: 1px solid var(--earth-brown);
   border-radius: 2px;
   padding: 1rem;
   text-align: center;
-  background-color: #fafafa;
+  background-color: var(--earth-tan);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--earth-light);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .product .potato-item {
@@ -53,10 +76,9 @@
 /*==================================================== Footer ====================================================*/
 
 .footer {
-  background-color: #f1f1f1;
+  background-color: var(--earth-brown);
   padding: 1rem;
-  margin-top: 2rem;
-  color: #777;
+  color: var(--earth-dark);
 }
 
 /*==================================================== Footer ====================================================*/
