@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  font-family: Arial, sans-serif;
+  color: #262626;
+  align-items: center;
   text-align: center;
+  background-color: #fafafa;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*==================================================== Navbar ====================================================*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafafa;
+  padding: 1rem;
+  color: #262626;
+  height: 150px;
+  border-bottom: #000000 1px solid;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*==================================================== Navbar ====================================================*/
+/*=============================================== Product Container ===============================================*/
+
+.product-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/*=============================================== Product Container ===============================================*/
+/*==================================================== Product ====================================================*/
+
+.product {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fafafa;
 }
 
-.card {
-  padding: 2em;
+.product .potato-item {
+  border-radius: 4px;
+  border: #000000 1px solid;
 }
 
-.read-the-docs {
-  color: #888;
+/*==================================================== Product ====================================================*/
+/*==================================================== Footer ====================================================*/
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #777;
 }
+
+/*==================================================== Footer ====================================================*/
