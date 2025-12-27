@@ -67,7 +67,10 @@ const potatoes = [
       Susceptible: "common scab, fusarium dry rot, tuber late blight, leaf roll, pink eye and rhizoctonia.",
       "Highly Susceptible": "verticillium wilt.",
     },
-    image: "src/assets/images/fingerling.jpg",
+    image: [
+      "src/assets/images/fingerling.jpg",
+      "src/assets/images/kennebec1.jpg",
+    ],
   },
   {
     name: "Norkotah Russet",
