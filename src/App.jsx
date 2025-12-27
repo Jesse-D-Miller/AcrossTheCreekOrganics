@@ -1,6 +1,7 @@
 import ProductContainer from "./components/productContainer";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -16,7 +17,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route
               path="/contact"
-              element={<div>Contact Form Placeholder</div>}
+              element={<ContactForm />}
             />
           </Routes>
         </div>
