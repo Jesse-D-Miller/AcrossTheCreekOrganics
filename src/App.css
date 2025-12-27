@@ -49,6 +49,50 @@ min-height: calc(100vh - 350px - 2rem - 2px);
 }
 
 /*==================================================== Navbar ====================================================*/
+/*================================================= Product Page =================================================*/
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.product-page p {
+  font-size: 0.75rem;
+  margin: 0.5rem 0;
+  text-align: start;
+  justify-self: start;
+}
+
+.product-page ul {
+  font-size: 0.75rem;
+  list-style: none;
+  padding: 0;
+  text-align: start;
+  justify-self: start;
+}
+
+.product-page li {
+  margin-bottom: 0.25rem;
+}
+
+.product-page .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.product-page .image-gallery img {
+    width: 100%;
+  height: auto;
+  border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  border: #000000 1px solid;
+  object-fit: cover;
+  display: block;
+}
+
+/*================================================= Product Page =================================================*/
 /*=============================================== Product Container ===============================================*/
 
 .product-container {

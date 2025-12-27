@@ -8,7 +8,7 @@ function ProductPage() {
   if (!potato) return <div>Potato not found</div>;
 
   return (
-    <div>
+    <div className="product-page">
       <h2>{potato.name}</h2>
       <h3>Certified Organic Seed Potato</h3>
       <p>Maturity: {potato.maturity}</p>
@@ -26,9 +26,11 @@ function ProductPage() {
         <li>Highly Susceptible: {potato.diseaseInfo["Highly Susceptible"]}</li>
       </ul>
       <p>{potato.description}</p>
+      <div className="image-gallery">
       {potato.image.map((imgSrc, index) => (
         <img key={index} src={imgSrc} alt={`${potato.name} ${index + 1}`} />
       ))}
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ function ProductContainer() {
             key={potato.name}
             name={potato.name}
             description={potato.description}
-            image={potato.image}
+            image={potato.image[0]}
           />
         </Link>
       ))}
