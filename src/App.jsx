@@ -7,10 +7,12 @@ import Footer from "./components/Footer";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import potatoData from "./data/potatoes.js";
+import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
   return (
     <BrowserRouter>
+      <CartProvider>
       <div className="App">
         <Navbar />
         <div className="main-content">
@@ -26,6 +28,7 @@ function App() {
         </div>
         <Footer />
       </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }
