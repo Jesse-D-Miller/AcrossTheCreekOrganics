@@ -4,18 +4,24 @@ import { Link } from "react-router-dom";
 
 function ProductContainer() {
   return (
-    <div className="product-container">
-      {potatoData.map((potato) => (
-        <Link to={`/${potato.id}`} style={{ textDecoration: 'none' }} key={potato.id}>
-          <Product
-            key={potato.name}
-            name={potato.name}
-            description={potato.description}
-            image={potato.image[0]}
-          />
-        </Link>
-      ))}
-    </div>
+    <>
+      <div className="product-container">
+        {potatoData.map((potato) => (
+          <Link
+            to={`/${potato.id}`}
+            style={{ textDecoration: "none" }}
+            key={potato.id}
+          >
+            <Product
+              key={potato.name}
+              name={potato.name}
+              description={potato.description}
+              image={potato.image[0]}
+            />
+          </Link>
+        ))}
+      </div>
+    </>
   );
 }
 

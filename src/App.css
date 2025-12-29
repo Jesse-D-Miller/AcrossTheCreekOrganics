@@ -4,29 +4,44 @@
   align-items: center;
   text-align: center;
   background-color: var(--earth-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
-max-width: 1024px;
-margin: 0 auto;
-width: 100%;
-min-height: calc(100vh - 350px - 2rem - 2px);
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /*==================================================== Navbar ====================================================*/
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: var(--earth-green);
   padding: 1rem;
   color: var(--earth-light);
-  height: 50px;
+  height: 100px;
   border-bottom: 2px solid var(--earth-dark);
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+}
+.navbar-content {
+  max-width: calc(1024px - 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .navbar .atco-logo {
@@ -46,6 +61,31 @@ min-height: calc(100vh - 350px - 2rem - 2px);
   margin: 0;
   padding: 0;
   font-size: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-content {
+    
+  }
+  
+  .navbar .atco-logo {
+  height: 70px;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+}
+
+
+}
+@media (min-width: 1024px) {
+  .navbar .atco-logo {
+  height: 70px;
+}
+
+.navbar h1 {
+  font-size: 2.5rem;
+}
 }
 
 /*==================================================== Navbar ====================================================*/
@@ -83,7 +123,7 @@ min-height: calc(100vh - 350px - 2rem - 2px);
 }
 
 .product-page .image-gallery img {
-    width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 4px;
   aspect-ratio: 1 / 1;
@@ -100,6 +140,24 @@ min-height: calc(100vh - 350px - 2rem - 2px);
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   padding: 2rem;
+}
+
+@media (min-width: 728px) {
+  .product-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 878px) {
+  .product-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 2rem;
+  }
 }
 
 /*=============================================== Product Container ===============================================*/
@@ -132,21 +190,31 @@ min-height: calc(100vh - 350px - 2rem - 2px);
 /*==================================================== Footer ====================================================*/
 
 .footer {
-  display: flex;
   background-color: var(--earth-brown);
   color: var(--earth-dark);
-  align-items: center;
-  justify-content: space-between;
   padding: 0 1rem;
   height: 100px;
   font-size: 0.5rem;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  margin-left: calc(-50vw + 50%);
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: calc(1024px - 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .footer .atco-logo {
   height: 50px;
   filter: drop-shadow(0 0 2px #000000);
 }
-
 
 /*==================================================== Footer ====================================================*/
 /*===================================================== About =====================================================*/
@@ -164,7 +232,7 @@ min-height: calc(100vh - 350px - 2rem - 2px);
   border-radius: 3px;
   border: #000000 1px solid;
   object-fit: cover;
-  width: 300px;
+  width: clamp(200px, 75vw, 500px);
 }
 
 /*===================================================== About =====================================================*/
@@ -178,7 +246,6 @@ min-height: calc(100vh - 350px - 2rem - 2px);
   align-items: center;
   justify-content: flex-start;
   padding: 0.5rem;
-
 }
 
 .contact-form {
@@ -186,7 +253,7 @@ min-height: calc(100vh - 350px - 2rem - 2px);
   margin: 0.5rem auto;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   background: var(--earth-tan);
   display: flex;
   flex-direction: column;
@@ -235,4 +302,3 @@ min-height: calc(100vh - 350px - 2rem - 2px);
 }
 
 /*================================================= Contact Form =================================================*/
-
