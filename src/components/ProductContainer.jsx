@@ -17,6 +17,7 @@ function ProductContainer() {
               name={potato.name}
               description={potato.description}
               image={potato.image[0]}
+              potatoId={potato.id}
             />
           </Link>
         ))}

@@ -17,6 +17,10 @@ const potatoes = [
       Susceptible: "",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "russian-blue-5lb", label: "5lb Bag" },
+      { id: "russian-blue-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/purple.jpg",
       "src/assets/images/russianBlue1.jpg",
@@ -40,6 +44,10 @@ const potatoes = [
         "black leg, fusarium dry rot, leaf roll, phoma rot, PVX and PVY.",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "red-chieftan-5lb", label: "5lb Bag" },
+      { id: "red-chieftan-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/red.jpg",
       "src/assets/images/redChieftan1.jpg",
@@ -63,6 +71,10 @@ const potatoes = [
       Susceptible: "",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "german-butter-sieglinde-5lb", label: "5lb Bag" },
+      { id: "german-butter-sieglinde-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/german.jpg",
       "src/assets/images/germanButter1.jpg",
@@ -88,6 +100,10 @@ const potatoes = [
         "common scab, fusarium dry rot, tuber late blight, leaf roll, pink eye and rhizoctonia.",
       "Highly Susceptible": "verticillium wilt.",
     },
+    salesQuantities: [
+      { id: "kennebec-5lb", label: "5lb Bag" },
+      { id: "kennebec-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/fingerling.jpg",
       "src/assets/images/kennebec1.jpg",
@@ -111,6 +127,10 @@ const potatoes = [
         "most viruses, late blight, early blight, verticillium wilt, potato wart.",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "russet-5lb", label: "5lb Bag" },
+      { id: "russet-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/norkotahRusset1.png",
       "src/assets/images/russet.jpg",
@@ -133,6 +153,10 @@ const potatoes = [
       Susceptible: "common scab, PVY, air pollution.",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "yukon-gold-5lb", label: "5lb Bag" },
+      { id: "yukon-gold-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/yukonGold1.jpg",
       "src/assets/images/yukonGold.jpg",
@@ -155,6 +179,10 @@ const potatoes = [
         "leaf roll, blackleg, PVM, PVS, PVX, PVY, common scab, verticillium wilt, late blight, fusarium dry rot.",
       "Highly Susceptible": "rhizoctonia.",
     },
+    salesQuantities: [
+      { id: "warba-5lb", label: "5lb Bag" },
+      { id: "warba-50lb", label: "50lb Box" }
+    ],
     image: ["src/assets/images/warba1.jpg"],
   },
   {
@@ -172,6 +200,10 @@ const potatoes = [
       Susceptible: "",
       "Highly Susceptible": "",
     },
+    salesQuantities: [
+      { id: "potato-5lb", label: "5lb Bag" },
+      { id: "potato-50lb", label: "50lb Box" }
+    ],
     image: [
       "src/assets/images/potato.jpg",
       "src/assets/images/german.jpg",

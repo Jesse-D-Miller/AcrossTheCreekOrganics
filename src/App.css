@@ -64,28 +64,22 @@
 }
 
 @media (min-width: 768px) {
-  .navbar-content {
-    
-  }
-  
   .navbar .atco-logo {
-  height: 70px;
-}
+    height: 70px;
+  }
 
-.navbar h1 {
-  font-size: 2rem;
-}
-
-
+  .navbar h1 {
+    font-size: 2rem;
+  }
 }
 @media (min-width: 1024px) {
   .navbar .atco-logo {
-  height: 70px;
-}
+    height: 70px;
+  }
 
-.navbar h1 {
-  font-size: 2.5rem;
-}
+  .navbar h1 {
+    font-size: 2.5rem;
+  }
 }
 
 /*==================================================== Navbar ====================================================*/
@@ -115,14 +109,14 @@
   margin-bottom: 0.25rem;
 }
 
-.product-page .image-gallery {
+/* .product-page .product-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
   margin-top: 0.5rem;
-}
+} */
 
-.product-page .image-gallery img {
+.product-page .product-gallery img {
   width: 100%;
   height: auto;
   border-radius: 4px;
