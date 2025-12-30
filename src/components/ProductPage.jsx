@@ -16,7 +16,6 @@ function ProductPage() {
 
   const { addToCart } = useCart();
 
-
   if (!potato) return <div>Potato not found</div>;
 
   function handleAddToCart(quantity) {
@@ -40,43 +39,49 @@ function ProductPage() {
       <div className="product-gallery">
         <img src={potato.image[1]} alt={`${potato.name}`} />
 
-        {potato.salesQuantities.map((quantity) => (
-          <div className="cart-actions" key={quantity.id}>
-            <div className="details">{quantity.label}</div>
-            <div className="actions">
-              <button
-                className="decrement-button"
-                onClick={() =>
-                  setQuantities((q) => ({
-                    ...q,
-                    [quantity.id]: Math.max(0, q[quantity.id] - 1),
-                  }))
-                }
-              >
-                -
-              </button>
-              <span className="quantity-display">
-                {quantities[quantity.id]}
-              </span>
-              <button
-                className="increment-button"
-                onClick={() =>
-                  setQuantities((q) => ({
-                    ...q,
-                    [quantity.id]: q[quantity.id] + 1,
-                  }))
-                }
-              >
-                +
-              </button>
+        <div className="order-card">
+          {potato.salesQuantities.map((quantity) => (
+            <div className="cart-actions" key={quantity.id}>
+              <div className="details">{quantity.label}</div>
+              <div className="cart-buttons">
+                <div className="actions">
+                  <button
+                    className="decrement-button"
+                    onClick={() =>
+                      setQuantities((q) => ({
+                        ...q,
+                        [quantity.id]: Math.max(0, q[quantity.id] - 1),
+                      }))
+                    }
+                  >
+                    -
+                  </button>
+                  <span className="quantity-display">
+                    {quantities[quantity.id]}
+                  </span>
+                  <button
+                    className="increment-button"
+                    onClick={() =>
+                      setQuantities((q) => ({
+                        ...q,
+                        [quantity.id]: q[quantity.id] + 1,
+                      }))
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+
+                <button
+                  className="add-to-cart-button"
+                  onClick={() => handleAddToCart(quantity)}
+                >
+                  Add to Order
+                </button>
+              </div>
             </div>
-            <div className="add-to-cart">
-              <button className="add-to-cart-button" onClick={() => handleAddToCart(quantity)}>
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <h4>Characteristics:</h4>
       <p>Maturity: {potato.maturity}</p>
