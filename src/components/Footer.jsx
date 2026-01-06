@@ -3,7 +3,7 @@ function Footer() {
     <div className="footer">
       <div className="footer-content">
         <img
-          src="src/assets/images/accrossthecreek_logo.png"
+          src="/images/accrossthecreek_logo.png"
           alt="Across The Creek Organics Logo"
           className="atco-logo"
         />

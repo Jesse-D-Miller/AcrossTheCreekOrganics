@@ -4,7 +4,7 @@ function About() {
       <h2>About Us</h2>
       <div className="about-flex">
         <img
-          src="src/assets/images/atcoAerialView.jpg"
+          src="/images/atcoAerialView.jpg"
           alt="Across The Creek Organics Farm"
           className="about-image"
         />

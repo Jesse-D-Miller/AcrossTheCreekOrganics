@@ -22,8 +22,8 @@ const potatoes = [
       { id: "russian-blue-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/purple.jpg",
-      "src/assets/images/russianBlue1.jpg",
+      "/images/purple.jpg",
+      "/images/russianBlue1.jpg",
     ],
   },
   {
@@ -49,10 +49,10 @@ const potatoes = [
       { id: "red-chieftan-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/red.jpg",
-      "src/assets/images/redChieftan1.jpg",
-      "src/assets/images/redChieftan2.jpg",
-      "src/assets/images/redChieftan3.jpg",
+      "/images/red.jpg",
+      "/images/redChieftan1.jpg",
+      "/images/redChieftan2.jpg",
+      "/images/redChieftan3.jpg",
     ],
   },
   {
@@ -76,10 +76,10 @@ const potatoes = [
       { id: "german-butter-sieglinde-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/german.jpg",
-      "src/assets/images/germanButter1.jpg",
-      "src/assets/images/germanButter3.jpg",
-      "src/assets/images/germanButter2.jpg",
+      "/images/german.jpg",
+      "/images/germanButter1.jpg",
+      "/images/germanButter3.jpg",
+      "/images/germanButter2.jpg",
     ],
   },
   {
@@ -105,8 +105,8 @@ const potatoes = [
       { id: "kennebec-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/fingerling.jpg",
-      "src/assets/images/kennebec1.jpg",
+      "/images/fingerling.jpg",
+      "/images/kennebec1.jpg",
     ],
   },
   {
@@ -132,8 +132,8 @@ const potatoes = [
       { id: "russet-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/norkotahRusset1.png",
-      "src/assets/images/russet.jpg",
+      "/images/norkotahRusset1.png",
+      "/images/russet.jpg",
     ],
   },
   {
@@ -158,8 +158,8 @@ const potatoes = [
       { id: "yukon-gold-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/yukonGold1.jpg",
-      "src/assets/images/yukonGold.jpg",
+      "/images/yukonGold1.jpg",
+      "/images/yukonGold.jpg",
     ],
   },
   {
@@ -183,7 +183,7 @@ const potatoes = [
       { id: "warba-5lb", label: "5lb Bag" },
       { id: "warba-50lb", label: "50lb Box" }
     ],
-    image: ["src/assets/images/warba1.jpg"],
+    image: ["/images/warba1.jpg"],
   },
   {
     name: "Potato",
@@ -205,9 +205,9 @@ const potatoes = [
       { id: "potato-50lb", label: "50lb Box" }
     ],
     image: [
-      "src/assets/images/potato.jpg",
-      "src/assets/images/german.jpg",
-      "src/assets/images/fingerling.jpg",
+      "/images/potato.jpg",
+      "/images/german.jpg",
+      "/images/fingerling.jpg",
     ],
   },
 ];
