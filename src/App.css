@@ -22,10 +22,10 @@
 
 .navbar {
   background-color: var(--primary-green);
-  padding: 1rem;
+  padding: 0.75rem 0.25rem;
   color: var(--primary-white);
   height: 100px;
-  border-bottom: 2px solid var(--secondary-green);
+  border-bottom: 1px solid var(--primary-black);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -38,10 +38,25 @@
 .navbar-content {
   max-width: calc(1024px - 4rem);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.logo-and-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0.25rem;
 }
 
 .navbar .atco-logo {
@@ -50,36 +65,34 @@
 }
 
 .navbar h1 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: 0;
   text-shadow: #000000 2px 2px 4px;
 }
 
 .navbar ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
   list-style: none;
-  gap: 1rem;
-  margin: 0;
+  margin: 0.5rem 0;
   padding: 0;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+}
+.navbar ul li a {
+  color: var(--primary-white);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  transition: background 0.2s, color 0.2s;
 }
 
-@media (min-width: 768px) {
-  .navbar .atco-logo {
-    height: 70px;
-  }
-
-  .navbar h1 {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 1024px) {
-  .navbar .atco-logo {
-    height: 70px;
-  }
-
-  .navbar h1 {
-    font-size: 2.5rem;
-  }
+.navbar ul li a:hover,
+.navbar ul li a:focus {
+  background: var(--primary-white);
+  color: var(--primary-green);
 }
 
 /*==================================================== Navbar ====================================================*/
@@ -234,23 +247,7 @@
   padding: 1rem;
 }
 
-@media (min-width: 728px) {
-  .product-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    padding: 2rem;
-  }
-}
 
-@media (min-width: 878px) {
-  .product-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    padding: 2rem;
-  }
-}
 
 /*=============================================== Product Container ===============================================*/
 /*==================================================== Product ====================================================*/
@@ -268,7 +265,7 @@
   background-color: var(--primary-white);
   gap: 0.5rem;
   margin: auto;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -279,7 +276,6 @@
   background-size: cover;
   background-position: center;
   border-right: var(--primary-black) 1px solid;
-
 }
 
 .product h5 {
