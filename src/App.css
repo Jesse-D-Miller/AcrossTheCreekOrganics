@@ -310,7 +310,7 @@
 .product {
   display: flex;
   flex-direction: row;
-  /* justify-content: left; */
+  justify-content: left;
   border: 1px solid var(--primary-black);
   border-radius: 2px;
   padding: 0;
@@ -325,7 +325,9 @@
 }
 
 .product .product-image {
-  width: 40%;
+  width: 100%;
+  height: auto;
+  max-width: 170px;
   aspect-ratio: 1 / 1;
   background-color: var(--primary-white);
   background-size: cover;
