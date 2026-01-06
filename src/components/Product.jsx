@@ -9,12 +9,12 @@ function Product({ name, description, image }) {
         style={{
           backgroundImage: `url(${image})`,
         }}
-      ></div>
+      />
       <div
         className="product-content"
         style={{ position: "relative", zIndex: 2 }}
       >
-        <h5>{name}</h5>
+        <h4>{name}</h4>
         <p>{description}</p>
       </div>
 

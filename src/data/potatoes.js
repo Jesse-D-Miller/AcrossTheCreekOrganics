@@ -4,7 +4,7 @@ const potatoes = [
   {
     name: "Russian Blue",
     id: "russian-blue",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "late-season",
     tubers:
       "oblong; smooth dark purple with scattered tan skin; shallow eyes, evenly distributed; prominent eyebrows; blue-purple flesh.",
@@ -29,7 +29,7 @@ const potatoes = [
   {
     name: "Red Chieftan",
     id: "red-chieftan",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "mid-season",
     tubers:
       "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh. High yielding variety, attractive appearance, widely adapted. Well suited for washing at maturity. Good storability. Medium specific gravity.",
@@ -56,9 +56,9 @@ const potatoes = [
     ],
   },
   {
-    name: "German Butter (sieglinde)",
+    name: "German Butter",
     id: "german-butter-sieglinde",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "mid-season",
     tubers:
       'oblong, slightly-flattened, smooth tubers covered with clear yellow skin. Sold by Across the Creek Organics as "German Butter Potatoes" this variety has been a true superstar potato.Loved by chefs and home cooks for its flavour, loved by farmers for it high yield of smooth tubers.',
@@ -85,7 +85,7 @@ const potatoes = [
   {
     name: "Kennebec",
     id: "kennebec",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "mid to late-season",
     tubers:
       "elliptical to oblong, medium thick; smooth creamy buff skin; shallow eyes; white flesh. High yielding fast growing variety, widely adapted. Requires close planting (15 to 20 cm between plants) and vine killing to avoid producing oversized and rough tubers. Excellent storage quality. Long dormancy period. High total solids.\nNote: tubers grow green rapidly when exposed to light.",
@@ -112,7 +112,7 @@ const potatoes = [
   {
     name: "Norkotah Russet",
     id: "russet",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "early to mid-season",
     tubers:
       "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; shallow bright golden eyes, fairly numerous; many slightly curved eyebrows; white flesh.",
@@ -139,7 +139,7 @@ const potatoes = [
   {
     name: "Yukon Gold",
     id: "yukon-gold",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "mid-season",
     tubers:
       "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
@@ -165,7 +165,7 @@ const potatoes = [
   {
     name: "Warba",
     id: "warba",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "very early-season",
     tubers:
       "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
@@ -188,7 +188,7 @@ const potatoes = [
   {
     name: "Potato",
     id: "potato",
-    description: "",
+    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
     maturity: "",
     tubers: "",
     yield: "",

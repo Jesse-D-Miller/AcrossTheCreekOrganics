@@ -310,7 +310,7 @@
 .product {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  /* justify-content: left; */
   border: 1px solid var(--primary-black);
   border-radius: 2px;
   padding: 0;
@@ -331,16 +331,26 @@
   background-size: cover;
   background-position: center;
   border-right: var(--primary-black) 1px solid;
-}
-
-.product h5 {
-  font-size: 0.75rem;
-  margin: 0.5rem 0 0.25rem 0;
   justify-self: left;
 }
 
+.product .product-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.product h4 {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  text-align: left;
+}
+
 .product p {
-  font-size: 0.5rem;
+  font-size: 0.75rem;
+  margin: 0;
+  text-align: left;
+  padding-right: 0.5rem;
 }
 
 .product .potato-item {
