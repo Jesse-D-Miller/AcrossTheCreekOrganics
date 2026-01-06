@@ -228,10 +228,10 @@
 /*=============================================== Product Container ===============================================*/
 
 .product-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  padding: 2rem;
+  padding: 1rem;
 }
 
 @media (min-width: 728px) {
@@ -256,17 +256,36 @@
 /*==================================================== Product ====================================================*/
 
 .product {
-  aspect-ratio: 1 / 1;
-  border: 1px solid var(--primary-green);
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border: 1px solid var(--primary-black);
   border-radius: 2px;
-  padding: 0.25rem;
-  text-align: center;
+  padding: 0;
+  color: var(--primary-black);
+  aspect-ratio: 7 / 3;
+  max-height: 170px;
+  background-color: var(--primary-white);
+  gap: 0.5rem;
+  margin: auto;
+  box-sizing: border-box; 
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.product .product-image {
+  width: 40%;
+  aspect-ratio: 1 / 1;
   background-color: var(--primary-white);
   background-size: cover;
   background-position: center;
-  position: relative;
-  color: var(--primary-white);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  border-right: var(--primary-black) 1px solid;
+
+}
+
+.product h5 {
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0.25rem 0;
+  justify-self: left;
 }
 
 .product p {
