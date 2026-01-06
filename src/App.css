@@ -1,9 +1,9 @@
 .App {
   font-family: Arial, sans-serif;
-  color: var(--earth-dark);
+  color: var(--primary-white);
   align-items: center;
   text-align: center;
-  background-color: var(--earth-light);
+  background-color: var(--primary-white);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,11 +21,11 @@
 /*==================================================== Navbar ====================================================*/
 
 .navbar {
-  background-color: var(--earth-green);
+  background-color: var(--primary-green);
   padding: 1rem;
-  color: var(--earth-light);
+  color: var(--primary-white);
   height: 100px;
-  border-bottom: 2px solid var(--earth-dark);
+  border-bottom: 2px solid var(--secondary-green);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -134,7 +134,7 @@
   border: #000000 1px solid;
   padding: 0.5rem;
   border-radius: 4px;
-  background-color: var(--earth-tan);
+  background-color: var(--primary-brown);
   height: 6rem;
   width: 90vw;
   max-width: 350px;
@@ -156,7 +156,7 @@
   .actions
   .decrement-button {
   border: none;
-  background-color: #1d8132;
+  background-color: var(--primary-green);
   border-right: #000000 1px solid;
   height: 100%;
   width: 25%;
@@ -169,7 +169,7 @@
   .actions
   .increment-button {
   border: none;
-  background-color: #1d8132;
+  background-color: var(--primary-green);
   border-left: #000000 1px solid;
   height: 100%;
   width: 25%;
@@ -183,7 +183,7 @@
   padding: 0;
   height: 40%;
   width: 100%;
-  background-color: var(--earth-light);
+  background-color: var(--secondary-brown);
 }
 
 .product-page
@@ -198,8 +198,8 @@
 
 .product-page .product-gallery .cart-actions .cart-buttons .add-to-cart-button {
   border: #000000 1px solid;
-  background-color: #1d8132;
-  color: var(--earth-light);
+  background-color: var(--primary-green);
+  color: var(--primary-white);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -257,15 +257,15 @@
 
 .product {
   aspect-ratio: 1 / 1;
-  border: 1px solid var(--earth-brown);
+  border: 1px solid var(--primary-green);
   border-radius: 2px;
   padding: 0.25rem;
   text-align: center;
-  background-color: var(--earth-tan);
+  background-color: var(--primary-white);
   background-size: cover;
   background-position: center;
   position: relative;
-  color: var(--earth-light);
+  color: var(--primary-white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
@@ -282,8 +282,8 @@
 /*==================================================== Footer ====================================================*/
 
 .footer {
-  background-color: var(--earth-brown);
-  color: var(--earth-dark);
+  background-color: var(--primary-green);
+  color: var(--primary-white);
   padding: 0 1rem;
   height: 100px;
   font-size: 0.5rem;
@@ -331,7 +331,7 @@
 /*================================================= Contact Form =================================================*/
 
 .contact-form-page {
-  background: var(--earth-tan);
+  background: var(--primary-brown);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -346,7 +346,7 @@
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  background: var(--earth-tan);
+  background: var(--primary-brown);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -355,7 +355,7 @@
 .contact-form label {
   font-weight: bold;
   margin-bottom: 0.25rem;
-  color: var(--earth-dark);
+  color: var(--primary-white);
   text-align: left;
   display: block;
 }
@@ -363,11 +363,11 @@
 .contact-form input,
 .contact-form textarea {
   padding: 0.5rem;
-  border: 1px solid var(--earth-brown);
+  border: 1px solid var(--primary-brown);
   border-radius: 4px;
   font-size: 1rem;
-  background: var(--earth-light);
-  color: var(--earth-dark);
+  background: var(--secondary-brown);
+  color: var(--primary-white);
   width: 100%;
   box-sizing: border-box;
 }
@@ -377,8 +377,8 @@
 }
 
 .contact-form button[type="submit"] {
-  background: var(--earth-green);
-  color: var(--earth-light);
+  background: var(--primary-green);
+  color: var(--primary-white);
   border: none;
   border-radius: 4px;
   padding: 0.75rem 1.5rem;
@@ -390,7 +390,7 @@
 }
 
 .contact-form button[type="submit"]:hover {
-  background: var(--earth-dark);
+  background: var(--primary-green);
 }
 
 /*================================================= Contact Form =================================================*/

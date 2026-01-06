@@ -1,14 +1,16 @@
 :root {
-  --earth-green: #6b8f71;
-  --earth-brown: #a89f91;
-  --earth-tan: #e6ddc6;
-  --earth-dark: #4e5d4e;
-  --earth-light: #f5f3ea;
+  --primary-green: #53942b;
+  --secondary-green: #b3d76c;
+  --primary-brown: #dca436;
+  --secondary-brown: #dfdc92;
+  --primary-blue: #acbbd8;
+  --primary-white: #fdfefd;
+  --primary-black: #010101;
 }
 
 body {
-  background-color: var(--earth-light);
-  color: var(--earth-dark);
+  background-color: var(--secondary-white);
+  color: var(--primary-brown);
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
