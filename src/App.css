@@ -418,7 +418,7 @@
 /*================================================= Contact Form =================================================*/
 
 .contact-form-page {
-  background: var(--secondary-brown);
+  background: var(--primary-white);
   color: var(--primary-black);
   min-height: 100vh;
   display: flex;
@@ -434,7 +434,7 @@
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  background: var(--primary-brown);
+  background: var(--secondary-white);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -451,10 +451,10 @@
 .contact-form input,
 .contact-form textarea {
   padding: 0.5rem;
-  border: 1px solid var(--primary-brown);
+  border: 1px solid var(--primary-black);
   border-radius: 4px;
   font-size: 1rem;
-  background: var(--secondary-brown);
+  background: var(--primary-white);
   color: var(--primary-black);
   width: 100%;
   box-sizing: border-box;
