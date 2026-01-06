@@ -1,9 +1,9 @@
-import ProductContainer from "./components/productContainer";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import ContactForm from "./components/ContactForm";
+import ProductContainer from "./components/ProductContainer.jsx";
+import Navbar from "./components/Navbar.jsx";
+import About from "./components/About.jsx";
+import ContactForm from "./components/ContactForm.jsx";
 import ProductPage from "./components/ProductPage.jsx";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import potatoData from "./data/potatoes.js";
