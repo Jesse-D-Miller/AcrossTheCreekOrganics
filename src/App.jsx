@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import About from "./components/About.jsx";
 import ContactForm from "./components/ContactForm.jsx";
 import ProductPage from "./components/ProductPage.jsx";
+import Order from "./components/Order.jsx";
 import Footer from "./components/Footer.jsx";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -24,6 +25,7 @@ function App() {
               element={<ContactForm />}
             />
             <Route path="/:id" element={<ProductPage data={potatoData} />} />
+            <Route path="/order" element={<Order />} />
           </Routes>
         </div>
         <Footer />
