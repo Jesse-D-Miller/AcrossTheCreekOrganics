@@ -42,9 +42,9 @@ function Order() {
           ))}
         </ul>
       )}
-      <div style={{ marginTop: "2rem" }}>
+      <div>
         <Link to="/details">
-          <button disabled={cart.length === 0}>Checkout</button>
+          <button className="checkout-button" disabled={cart.length === 0}>Checkout</button>
         </Link>
         {/* <button
           onClick={clearCart}

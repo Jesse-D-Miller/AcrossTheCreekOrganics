@@ -555,11 +555,67 @@
 /*=================================================== Details ===================================================*/
 /*================================================ Confirm Order ================================================*/
 
+.confirm-order-page {
+  background: var(--primary-white);
+  color: var(--primary-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
 
+.confirm-order-page .order-detail-summary {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  margin: 0 0.5rem;
+  width: 100%;
+}
+
+.confirm-order-page .order-item-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-bottom: var(--primary-black) 1px dashed;
+  background: var(--primary-white);
+}
+
+.confirm-order-page button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background: var(--primary-green);
+  color: var(--primary-white);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-page .checkout-button  {
+  background: var(--primary-green);
+  color: var(--primary-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 /*================================================ Confirm Order ================================================*/
 /*============================================== Final Confirmation ==============================================*/
 
-
+.confirmation-page {
+  background: var(--primary-white);
+  color: var(--primary-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+} 
 
 /*============================================== Final Confirmation ==============================================*/
