@@ -12,8 +12,11 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import potatoData from "./data/potatoes.js";
 import { CartProvider } from "./context/CartContext.jsx";
+import { useState } from "react";
 
 function App() {
+  const [userDetails, setUserDetails] = useState({});
+
   return (
     <BrowserRouter>
       <CartProvider>
@@ -26,8 +29,8 @@ function App() {
               <Route path="/contact" element={<ContactForm />} />
               <Route path="/:id" element={<ProductPage data={potatoData} />} />
               <Route path="/order" element={<Order />} />
-              <Route path="/details" element={<Details />} />
-              <Route path="/confirm-order" element={<ConfirmOrder />} />
+              <Route path="/details" element={<Details setUserDetails={setUserDetails} />} />
+              <Route path="/confirm-order" element={<ConfirmOrder userDetails={userDetails} />} />
               <Route path="/confirmation" element={<Confirmation />} />
             </Routes>
           </div>

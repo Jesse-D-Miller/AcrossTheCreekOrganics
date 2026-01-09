@@ -1,35 +1,90 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Details() {
+function Details({ setUserDetails }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const isValid = form.name.trim() && form.email.trim();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValid) {
+      setUserDetails(form);
+      navigate("/confirm-order");
+    } else {
+      alert("Please fill in all required fields.");
+    }
+  };
+
   return (
     <div className="user-order-details">
       <h2>Details</h2>
-      <form className="contact-form" action="" method="get">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <note style={{ fontSize: "0.75rem", margin: "0", textAlign: "left" }}>
           * Required fields
         </note>
         <div>
           <label htmlFor="name">Name: *</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            value={form.name}
+            onChange={handleChange}
+          />
         </div>
 
         <div>
           <label htmlFor="email">Email: *</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+          />
         </div>
 
         <div>
           <label htmlFor="number">Phone Number:</label>
-          <input type="tel" id="number" name="number" />
+          <input
+            type="tel"
+            id="number"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+          />
         </div>
 
         <div>
           <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" rows="5"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            value={form.message}
+            onChange={handleChange}
+          ></textarea>
         </div>
-        <Link to="/confirm-order">
-          <button type="submit">Next</button>
-        </Link>
+        <button type="submit" disabled={!isValid}>
+          Next
+        </button>
       </form>
     </div>
   );
