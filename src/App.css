@@ -515,5 +515,28 @@
   font-size: 0.75rem;
 }
 
+.order-page .right-section button {
+  margin: 0;
+  height: 1.75rem;
+  width: 1.75rem;
+  border: none;
+  background-color: var(--secondary-green);
+  color: var(--primary-black);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.order-page .right-section {
+  border: var(--primary-green) 2px solid;
+  border-radius: 50px;
+  margin: 0 0.5rem;
+  background-color: var(--secondary-green);
+  overflow: hidden;
+}
+
+.order-page .right-section span {
+  margin: 0 0.5rem;
+}
+
 
 /*================================================== Order Form ==================================================*/
