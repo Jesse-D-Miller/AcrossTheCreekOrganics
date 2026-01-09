@@ -4,6 +4,9 @@ import About from "./components/About.jsx";
 import ContactForm from "./components/ContactForm.jsx";
 import ProductPage from "./components/ProductPage.jsx";
 import Order from "./components/Order.jsx";
+import Details from "./components/Details.jsx";
+import ConfirmOrder from "./components/ConfirmOrder.jsx";
+import Confirmation from "./components/Confirmation.jsx";
 import Footer from "./components/Footer.jsx";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,22 +17,22 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-      <div className="App">
-        <Navbar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<ProductContainer />} />
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/contact"
-              element={<ContactForm />}
-            />
-            <Route path="/:id" element={<ProductPage data={potatoData} />} />
-            <Route path="/order" element={<Order />} />
-          </Routes>
+        <div className="App">
+          <Navbar />
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<ProductContainer />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<ContactForm />} />
+              <Route path="/:id" element={<ProductPage data={potatoData} />} />
+              <Route path="/order" element={<Order />} />
+              <Route path="/details" element={<Details />} />
+              <Route path="/confirm-order" element={<ConfirmOrder />} />
+              <Route path="/confirmation" element={<Confirmation />} />
+            </Routes>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
       </CartProvider>
     </BrowserRouter>
   );

@@ -43,7 +43,7 @@ function Order() {
         </ul>
       )}
       <div style={{ marginTop: "2rem" }}>
-        <Link to="/checkout">
+        <Link to="/details">
           <button disabled={cart.length === 0}>Checkout</button>
         </Link>
         {/* <button
