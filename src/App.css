@@ -501,4 +501,19 @@
   padding: 0.5rem;
 }
 
+.order-page ul {
+  border: var(--primary-black) 1px solid;
+  border-radius: 4px;
+  padding: 1rem 0;
+  width: 100%;
+}
+.order-page li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0  1rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+
 /*================================================== Order Form ==================================================*/
