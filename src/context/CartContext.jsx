@@ -7,12 +7,48 @@ export function CartProvider({ children }) {
 
   // Function to add item to cart
   function addToCart(item) {
-    setCart((prevCart) => [...prevCart, item]);
+    setCart((prevCart) => {
+      const existing = prevCart.find((cartItem) => cartItem.id === item.id);
+      if (existing) {
+        return prevCart.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: (cartItem.quantity || 1) + (item.quantity || 1) }
+            : cartItem
+        );
+      } else {
+        return [...prevCart, { ...item, quantity: item.quantity || 1 }];
+      }
+
+    });
   }
 
   // Function to remove item from cart
   function removeFromCart(itemId) {
     setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+  }
+
+  // decrement quantity and remove if quantity is 0
+  function decrementItem(itemId) {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) =>
+          item.id === itemId
+            ? { ...item, quantity: (item.quantity || 1) - 1 }
+            : item
+        )
+        .filter((item) => (item.quantity || 1) > 0)
+    );
+  }
+
+  // increment quantity
+  function incrementItem(itemId) {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === itemId
+          ? { ...item, quantity: (item.quantity || 1) + 1 }
+          : item
+      )
+    );
   }
 
   // Function to clear cart
