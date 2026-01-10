@@ -7,8 +7,11 @@ function ConfirmOrder({ userDetails }) {
   const navigate = useNavigate();
 
   const handleConfirm = async () => {
-    // TODO: Send order via email here
-    // await sendOrderEmail({ userDetails, cart });
+    await fetch("/api/sendOrder", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userDetails, cart }),
+    });
 
     clearCart();
     navigate("/confirmation");
@@ -40,7 +43,7 @@ function ConfirmOrder({ userDetails }) {
           </div>
         ))}
       </div>
-        <button onClick={handleConfirm}>Confirm Order</button>
+      <button onClick={handleConfirm}>Confirm Order</button>
     </div>
   );
 }
