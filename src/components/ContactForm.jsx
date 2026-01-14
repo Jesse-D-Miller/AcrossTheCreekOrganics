@@ -28,7 +28,7 @@ function ContactForm() {
         throw new Error("Failed to send message");
       }
 
-      alert("Your message has been sent. We will get back to you shortly.");
+      alert("Thanks for your message. We’ll get back to you shortly.");
       form.reset();
     } catch {
       alert("Something went wrong sending your message. Please try again.");
@@ -40,14 +40,10 @@ function ContactForm() {
   return (
     <div className="contact-form-page">
       <h2>Contact Us</h2>
-      <p>Please fill out the form below.</p>
+      <p>Use the form below to get in touch with us.</p>
       <p>
-        We will respond as soon as possible with our current Certified Organic
-        Seed Potato availability.
-      </p>
-      <p>
-        Once your order is confirmed, we will provide an invoice and shipping
-        details.
+        For general questions, availability inquiries, or additional
+        information, send us a message and we’ll respond as soon as we can.
       </p>
 
       <form className="contact-form" onSubmit={handleSubmit}>
@@ -74,7 +70,7 @@ function ContactForm() {
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <button type="submit">{sending ? "Sending..." : "Submit"}</button>
+        <button type="submit">{sending ? "Sending..." : "Send Message"}</button>
       </form>
     </div>
   );

@@ -34,7 +34,7 @@ function ProductPage() {
   return (
     <div className="product-page">
       <h2>{potato.name}</h2>
-      <h3>Certified Organic Seed Potato</h3>
+      <h3>Certified Organic Seed Potatoes</h3>
 
       <div className="product-gallery">
         <img src={potato.image[1]} alt={`${potato.name}`} />
