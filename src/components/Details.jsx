@@ -89,7 +89,7 @@ function Details({ setUserDetails }) {
           ></textarea>
         </div>
         <button type="submit" disabled={!isValid}>
-          Next
+          Next: Review Request
         </button>
       </form>
     </div>

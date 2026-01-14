@@ -37,7 +37,7 @@ function Navbar() {
                 <Link to="/contact">Contact Us</Link>
               </li>
               <li>
-                <Link to="/order">Your Order</Link>
+                <Link to="/order">Selected Items</Link>
               </li>
             </ul>
           </div>

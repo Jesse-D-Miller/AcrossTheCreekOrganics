@@ -7,10 +7,11 @@ function Order() {
 
   return (
     <div className="order-page">
-      <h2>Your Order</h2>
+      <h2>Your Selected Items</h2>
       {cart.length === 0 ? (
         <p>
-          Your cart is empty. <Link to="/">Shop now!</Link>
+          There is nothing in your order request yet.{" "}
+          <Link to="/">Shop now!</Link>
         </p>
       ) : (
         <ul style={{ listStyle: "none" }}>
@@ -44,7 +45,20 @@ function Order() {
       )}
       <div>
         <Link to="/details">
-          <button className="checkout-button" disabled={cart.length === 0}>Checkout</button>
+          <button
+            className="checkout-button"
+            disabled={cart.length === 0}
+            style={
+              cart.length === 0
+                ? {
+                    backgroundColor: "#cccccc",
+                    color: "var(--secondary-black)",
+                  }
+                : {}
+            }
+          >
+            Next: Contact Details
+          </button>
         </Link>
         {/* <button
           onClick={clearCart}

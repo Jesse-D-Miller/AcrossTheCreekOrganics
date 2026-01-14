@@ -60,7 +60,7 @@ function ConfirmOrder({ userDetails }) {
           </div>
         ))}
       </div>
-      <button onClick={handleConfirm} disabled={sending || cart.length === 0}>{sending ? "Sending..." : "Confirm Order"}</button>
+      <button onClick={handleConfirm} disabled={sending || cart.length === 0}>{sending ? "Sending..." : "Send Request"}</button>
     </div>
   );
 }
