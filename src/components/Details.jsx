@@ -44,6 +44,8 @@ function Details({ setUserDetails }) {
             id="name"
             name="name"
             required
+            maxLength={60}
+            pattern="[\w .\-']{2,60}"
             value={form.name}
             onChange={handleChange}
           />
@@ -56,6 +58,8 @@ function Details({ setUserDetails }) {
             id="email"
             name="email"
             required
+            maxLength={100}
+            pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
             value={form.email}
             onChange={handleChange}
           />
@@ -67,6 +71,7 @@ function Details({ setUserDetails }) {
             type="tel"
             id="number"
             name="phone"
+            maxLength={30}
             value={form.phone}
             onChange={handleChange}
           />
@@ -78,6 +83,7 @@ function Details({ setUserDetails }) {
             id="message"
             name="message"
             rows="5"
+            maxLength={500}
             value={form.message}
             onChange={handleChange}
           ></textarea>
