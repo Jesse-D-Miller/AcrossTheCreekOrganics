@@ -10,16 +10,20 @@ function About() {
         />
         <div>
           <p>
-            Our family has been producing disease and virus free Seed Potatoes
-            in Pemberton for over 50 years.
+            Our family has been growing disease- and virus-free seed potatoes in
+            Pemberton for over 50 years, across four generations of farming.
           </p>
           <p>
-            We are Organic Certified by PACS and also Certified as Seed Potato
-            growers by the Canadian Food Inspection Agency.
+            Pemberton is a protected seed potato region. Its high mountain
+            geography and isolation help limit outside disease pressure,
+            providing a strong foundation for producing clean, reliable seed.
           </p>
           <p>
-            The Pemberton Valleys high mountains and isolation protect our seed
-            from virus and disease from other areas.
+            We are <strong>Organic Certified</strong> by PACS and
+            <strong> Certified Seed Potato growers</strong> with the Canadian
+            Food Inspection Agency. As a small, family-run farm, we remain
+            hands-on at every stage and focus on producing consistently
+            high-quality seed potatoes.
           </p>
         </div>
       </div>
