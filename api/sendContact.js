@@ -2,17 +2,14 @@ import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// in-memory rate limiter (for serverless, resets on cold start)
-const RATE_LIMIT = 5; // max requests
+const RATE_LIMIT = 10; // max requests
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const ipHits = new Map();
 
-// makes it so that only requests from the frontend origin are allowed
 const ALLOWED_ORIGIN =
   process.env.FRONTEND_ORIGIN ||
   "https://acrossthecreekorganics.jesse-miller.com";
 
-//text sanitization functions
 function cleanText(value, maxLen = 500) {
   if (typeof value !== "string") return "";
   return value
@@ -34,15 +31,16 @@ function getClientIp(req) {
 }
 
 export default async function handler(req, res) {
-  // CORS preflight
   if (req.method === "OPTIONS") {
     res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+    res.setHeader("Vary", "Origin");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     return res.status(204).end();
   }
 
   res.setHeader("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
+  res.setHeader("Vary", "Origin");
 
   if (req.method !== "POST")
     return res.status(405).json({ error: "Method not allowed" });
@@ -53,77 +51,46 @@ export default async function handler(req, res) {
   const entry = ipHits.get(ip) || { count: 0, start: now };
 
   if (now - entry.start > WINDOW_MS) {
-    // Reset window
     entry.count = 0;
     entry.start = now;
   }
 
-  entry.count++;
+  entry.count += 1;
   ipHits.set(ip, entry);
-  if (entry.count > RATE_LIMIT) {
-    return res
-      .status(429)
-      .json({ error: "Too many requests. Please try again later." });
+  
+  if (entry.count >= RATE_LIMIT) {
+    return res.status(429).json({ error: "Too many requests" });
   }
 
   try {
-    const { userDetails, cart } = req.body || {};
+    const { name, email, phone, message } = req.body || {};
 
-    const name = cleanText(userDetails?.name, 80);
-    const email = cleanEmail(userDetails?.email);
-    const phone = cleanText(userDetails?.phone, 40);
-    const message = cleanText(userDetails?.message, 1000);
+    const safeName = cleanText(name, 80);
+    const safeEmail = cleanEmail(email, 200);
+    const safePhone = cleanText(phone, 40);
+    const safeMessage = cleanText(message, 2000);
 
-    if (!name || !email || !Array.isArray(cart) || cart.length === 0) {
-      return res.status(400).json({ error: "Invalid payload" });
+    if (!safeName || !safeEmail || !safeMessage) {
+      return res
+        .status(400)
+        .json({ error: "Name, email, and message are required" });
     }
-
-    // Sanitize cart items
-    const safeCart = cart
-      .map((item) => {
-        const itemName = cleanText(item?.name, 100);
-        const qtyRaw = Number(item?.quantity);
-        const quantity = Number.isFinite(qtyRaw)
-          ? Math.max(1, Math.min(999, qtyRaw))
-          : 1;
-        const notes = cleanText(item?.notes, 200);
-        return itemName ? { name: itemName, quantity, notes } : null;
-      })
-      .filter(Boolean);
-
-    if (safeCart.length === 0) {
-      return res.status(400).json({ error: "Cart is empty" });
-    }
-
-    const orderItems = safeCart
-      .map(
-        (item) =>
-          `- ${item.name} x${item.quantity}${
-            item.notes ? ` (${item.notes})` : ""
-          }`
-      )
-      .join("\n");
 
     const text = `
-New order inquiry
+New contact form submission:
 
-Customer:
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "N/A"}
-
+Name: ${safeName}
+Email: ${safeEmail}
+Phone: ${safePhone || "N/A"}
 Message:
-${message || "N/A"}
-
-Items:
-${orderItems}
+${safeMessage}
 `.trim();
 
     const msg = {
       to: process.env.ORDER_RECEIVER_EMAIL, // business owner email
       from: process.env.FROM_EMAIL, // verified sender (domain)
-      replyTo: email, // reply to customer
-      subject: `[Order Inquiry] ${name}`,
+      replyTo: safeEmail, // reply to customer
+      subject: `[Contact Form] ${safeName}`,
       text,
     };
 
@@ -131,7 +98,7 @@ ${orderItems}
 
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error("SendGrid error:", err?.response?.body || err);
-    return res.status(500).json({ error: "Failed to send order email" });
+    console.error(err);
+    return res.status(500).json({ error: "Failed to send message" });
   }
 }

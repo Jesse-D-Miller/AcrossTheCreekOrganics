@@ -1,15 +1,59 @@
+import { useState } from "react";
+
 function ContactForm() {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (sending) return;
+
+    setSending(true);
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.number.value.trim(),
+      message: form.message.value.trim(),
+    };
+
+    try {
+      const res = await fetch("/api/sendContact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      alert("Your message has been sent. We will get back to you shortly.");
+      form.reset();
+    } catch {
+      alert("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <div className="contact-form-page">
       <h2>Contact Us</h2>
+      <p>Please fill out the form below.</p>
       <p>
-        Please fill out the form below.
+        We will respond as soon as possible with our current Certified Organic
+        Seed Potato availability.
       </p>
-      <p>We will respond as soon as possible with our current Certified Organic Seed Potato availability.</p>
-      <p>Once your order is confirmed, we will provide an invoice and shipping details.</p>
+      <p>
+        Once your order is confirmed, we will provide an invoice and shipping
+        details.
+      </p>
 
-      <form className="contact-form" action="" method="get">
-        <note style={{fontSize: "0.75rem", margin: "0", textAlign: "left"}}>* Required fields</note>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <note style={{ fontSize: "0.75rem", margin: "0", textAlign: "left" }}>
+          * Required fields
+        </note>
         <div>
           <label htmlFor="name">Name: *</label>
           <input type="text" id="name" name="name" required />
@@ -30,7 +74,7 @@ function ContactForm() {
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit">{sending ? "Sending..." : "Submit"}</button>
       </form>
     </div>
   );
