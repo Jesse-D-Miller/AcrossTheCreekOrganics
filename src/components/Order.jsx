@@ -21,7 +21,7 @@ function Order() {
                 <span style={{ fontWeight: "bold" }}>{item.name}</span>
               </div>
               <div className="right-section">
-                {item.quantity === 0 ? (
+                {item.quantity === 1 ? (
                   <button onClick={() => removeFromCart(item.id)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -36,8 +36,8 @@ function ConfirmOrder({ userDetails }) {
 
   return (
     <div className="confirm-order-page">
-      <h2>Confirm Order</h2>
-      <p>Please confirm your order details below:</p>
+      <h2>Confirm Request</h2>
+      <p>Please confirm your order request details below:</p>
       <div className="user-details-summary">
         <p>
           <strong>Name:</strong> {userDetails.name}

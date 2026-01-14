@@ -32,7 +32,7 @@ function Details({ setUserDetails }) {
 
   return (
     <div className="user-order-details">
-      <h2>Details</h2>
+      <p>Please provide your contact information below:</p>
       <form className="contact-form" onSubmit={handleSubmit}>
         <note style={{ fontSize: "0.75rem", margin: "0", textAlign: "left" }}>
           * Required fields

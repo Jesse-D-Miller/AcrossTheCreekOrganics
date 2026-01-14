@@ -76,7 +76,7 @@ function ProductPage() {
                   className="add-to-cart-button"
                   onClick={() => handleAddToCart(quantity)}
                 >
-                  Add to Order
+                  Add to Request
                 </button>
               </div>
             </div>
