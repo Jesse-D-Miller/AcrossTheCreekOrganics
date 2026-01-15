@@ -13,21 +13,41 @@ function ProductPage() {
     });
     return initial;
   });
+  const [rowConfirmations, setRowConfirmations] = useState({});
 
   const { addToCart } = useCart();
 
   if (!potato) return <div>Potato not found</div>;
 
-  function handleAddToCart(quantity) {
-    const qty = quantities[quantity.id];
-    if (qty > 0) {
-      const item = {
+
+  function handleAddAllToCart() {
+    const itemsToAdd = potato.salesQuantities
+      .filter((quantity) => quantities[quantity.id] > 0)
+      .map((quantity) => ({
         id: `${potato.id}-${quantity.id}`,
         name: `${potato.name} - ${quantity.label}`,
-        quantity: qty,
-      };
-      addToCart(item);
-      setQuantities((prev) => ({ ...prev, [quantity.id]: 0 }));
+        quantity: quantities[quantity.id],
+        qid: quantity.id,
+      }));
+    if (itemsToAdd.length > 0) {
+      itemsToAdd.forEach((item) => addToCart(item));
+      // Show confirmation per row
+      const confirmations = {};
+      itemsToAdd.forEach((item) => {
+        confirmations[item.qid] = true;
+      });
+      setRowConfirmations(confirmations);
+      setTimeout(() => {
+        setRowConfirmations({});
+      }, 2000);
+      // Reset all toggles to zero
+      setQuantities(() => {
+        const reset = {};
+        potato.salesQuantities.forEach((q) => {
+          reset[q.id] = 0;
+        });
+        return reset;
+      });
     }
   }
 
@@ -38,10 +58,10 @@ function ProductPage() {
 
       <div className="product-gallery">
         <img src={potato.image[1]} alt={`${potato.name}`} />
-
         <div className="order-card">
+          <h4>Select Quantities</h4>
           {potato.salesQuantities.map((quantity) => (
-            <div className="cart-actions" key={quantity.id}>
+            <div className="cart-actions" key={quantity.id} style={{ position: 'relative' }}>
               <div className="details">{quantity.label}</div>
               <div className="cart-buttons">
                 <div className="actions">
@@ -71,34 +91,38 @@ function ProductPage() {
                     +
                   </button>
                 </div>
-
-                <button
-                  className="add-to-cart-button"
-                  onClick={() => handleAddToCart(quantity)}
-                >
-                  Add to Request
-                </button>
               </div>
+              {rowConfirmations[quantity.id] && (
+                <div className="add-cart-confirmation">
+                  Added to Request!
+                </div>
+              )}
             </div>
           ))}
+          <button
+            className="add-all-to-cart"
+            onClick={handleAddAllToCart}
+          >
+            Add to Request
+          </button>
         </div>
       </div>
       <h4>Characteristics:</h4>
-      <p>Maturity: {potato.maturity}</p>
-      <p>Tubers: {potato.tubers}</p>
-      <p>Yield: {potato.yield}</p>
-      <p>Use: {potato.use}</p>
+      <p><strong>Maturity:</strong> {potato.maturity}</p>
+      <p><strong>Tubers:</strong> {potato.tubers}</p>
+      <p><strong>Yield:</strong> {potato.yield}</p>
+      <p><strong>Use:</strong> {potato.use}</p>
       <h4>Disease Information:</h4>
       <ul>
-        <li>Field resistant: {potato.diseaseInfo["Field resistant"]}</li>
-        <li>Resistant: {potato.diseaseInfo.Resistant}</li>
+        <li><strong>Field resistant:</strong> {potato.diseaseInfo["Field resistant"]}</li>
+        <li><strong>Resistant:</strong> {potato.diseaseInfo.Resistant}</li>
         <li>
-          Moderately resistant: {potato.diseaseInfo["Moderately resistant"]}
+          <strong>Moderately resistant:</strong> {potato.diseaseInfo["Moderately resistant"]}
         </li>
-        <li>Susceptible: {potato.diseaseInfo.Susceptible}</li>
-        <li>Highly Susceptible: {potato.diseaseInfo["Highly Susceptible"]}</li>
+        <li><strong>Susceptible:</strong> {potato.diseaseInfo.Susceptible}</li>
+        <li><strong>Highly Susceptible:</strong> {potato.diseaseInfo["Highly Susceptible"]}</li>
       </ul>
-      <p>{potato.description}</p>
+      <p style={{ borderTop: "var(--secondary-black) 1px solid", borderBottom: "var(--secondary-black) 1px solid", padding: "1rem 0" }}><strong>Description:</strong> {potato.description}</p>
     </div>
   );
 }
