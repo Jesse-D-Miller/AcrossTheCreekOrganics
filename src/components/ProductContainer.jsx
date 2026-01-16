@@ -17,19 +17,13 @@ function ProductContainer() {
       </div>
       <div className="product-container">
         {potatoData.map((potato) => (
-          <Link
-            to={`/${potato.id}`}
-            style={{ textDecoration: "none" }}
-            key={potato.id}
-          >
-            <Product
-              key={potato.name}
-              name={potato.name}
-              description={potato.description}
-              image={potato.image[0]}
-              potatoId={potato.id}
-            />
-          </Link>
+          <Product
+            key={potato.name}
+            name={potato.name}
+            description={potato.description}
+            image={potato.image[0]}
+            potatoId={potato.id}
+          />
         ))}
       </div>
     </>

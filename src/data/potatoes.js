@@ -58,7 +58,7 @@ const potatoes = [
     name: "Seiglinde",
     id: "german-butter-sieglinde",
     description:
-      "Sold by Across the Creek Organics as German Butter Potatoes. Oblong, smooth tubers covered with yellow skin and yellow flesh.",
+      "Sold by Across the Creek Organics as German Butter Potatoes. Oblong, smooth tubers with yellow skin and yellow flesh.",
     maturity: "mid-season",
     tubers:
       'oblong, slightly-flattened, smooth tubers covered with clear yellow skin. Sold by Across the Creek Organics as "German Butter Potatoes" this variety has been a true superstar potato.Loved by chefs and home cooks for its flavour, loved by farmers for it high yield of smooth tubers.',

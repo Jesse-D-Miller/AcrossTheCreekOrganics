@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.125rem;
 }
 
 .logo-and-title {
@@ -56,7 +56,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  padding: 0.25rem;
+  padding: 0.125rem;
 }
 
 .navbar .atco-logo {
@@ -82,7 +82,7 @@
   justify-content: space-between;
   width: 100%;
   list-style: none;
-  margin: 0.35rem 0;
+  margin: 0.5rem 0;
   padding: 0;
   font-size: 0.7rem;
 }
@@ -230,7 +230,7 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.product-page .product-gallery .order-card h4{
+.product-page .product-gallery .order-card h4 {
   margin: 0;
   border: none;
   background-color: var(--primary-green);
@@ -383,7 +383,7 @@
   flex-direction: row;
   justify-content: left;
   border: 1px solid var(--primary-black);
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0;
   color: var(--primary-black);
   aspect-ratio: 7 / 3;
@@ -396,10 +396,10 @@
 }
 
 .product .product-image {
-  width: 100%;
+  width: 55%;
   height: auto;
   max-width: 170px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.1 / 1;
   background-color: var(--primary-white);
   background-size: cover;
   background-position: center;
@@ -416,11 +416,12 @@
 .product h4 {
   font-size: 0.75rem;
   margin: 0.25rem 0;
-  text-align: left;
+  text-align: center;
+  letter-spacing: 0.1rem;
 }
 
 .product p {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   margin: 0;
   text-align: left;
   padding-right: 0.5rem;
@@ -429,6 +430,17 @@
 .product .potato-item {
   border-radius: 4px;
   border: #000000 1px solid;
+}
+
+@media (min-width: 768px) {
+  .product h4 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 0.75rem;
+    margin: 0.5rem 0.25rem;
+  }
 }
 
 /*==================================================== Product ====================================================*/
