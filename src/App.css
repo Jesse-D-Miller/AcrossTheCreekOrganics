@@ -387,7 +387,9 @@
   padding: 0;
   color: var(--primary-black);
   aspect-ratio: 7 / 3;
-  max-height: 170px;
+  width: 99%;
+  max-width: 450px;
+  height: auto;
   background-color: var(--primary-white);
   gap: 0.5rem;
   margin: auto;
@@ -396,10 +398,8 @@
 }
 
 .product .product-image {
-  width: 55%;
+  width: 45%;
   height: auto;
-  max-width: 170px;
-  aspect-ratio: 1.1 / 1;
   background-color: var(--primary-white);
   background-size: cover;
   background-position: center;
@@ -410,7 +410,7 @@
 .product .product-content {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  width : 55%;
 }
 
 .product h4 {
@@ -425,6 +425,10 @@
   margin: 0;
   text-align: left;
   padding-right: 0.5rem;
+}
+
+.product a {
+  display: contents;
 }
 
 .product .potato-item {

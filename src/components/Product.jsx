@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 
 function Product({ name, description, image, potatoId }) {
   return (
-    <Link to={`/${potatoId}`} style={{ textDecoration: "none"}} key={potatoId}>
-      <div className="product">
+    <div className="product">
+      <Link
+        to={`/${potatoId}`}
+        style={{ textDecoration: "none", color: "inherit" }}
+        key={potatoId}
+      >
         <div
           className="product-image"
           style={{
@@ -17,8 +21,8 @@ function Product({ name, description, image, potatoId }) {
           <h4>{name}</h4>
           <p>{description}</p>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 
