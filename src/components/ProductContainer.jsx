@@ -8,9 +8,11 @@ function ProductContainer() {
       <div className="order-preamble">
         <p>
           <strong>About Ordering: </strong>
-          This website allows you to submit an order request. Availability is
-          confirmed after we review each request. We’ll follow up with
-          confirmation, pricing, and shipping details.
+          We do not process online payments through this website. Instead,
+          please use the site to submit an order request directly to us. We will
+          contact you shortly to confirm availability, pricing, and payment
+          options. If you have any questions, please reach out via our{" "}
+          <Link to="/contact">Contact Page</Link>.
         </p>
       </div>
       <div className="product-container">

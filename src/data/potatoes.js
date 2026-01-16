@@ -4,7 +4,8 @@ const potatoes = [
   {
     name: "Russian Blue",
     id: "russian-blue",
-    description: "Rich purple skin and blue-purple flesh. oblong tubers with smooth skin and shallow eyes. Similar in texture to Russet varieties.",
+    description:
+      "Rich purple skin and blue-purple flesh. oblong tubers with smooth skin and shallow eyes. Similar in texture to Russet varieties.",
     maturity: "late-season",
     tubers:
       "oblong; smooth dark purple with scattered tan skin; shallow eyes, evenly distributed; prominent eyebrows; blue-purple flesh.",
@@ -13,18 +14,16 @@ const potatoes = [
     diseaseInfo: {
       "Field resistant": "N/A",
       Resistant: "N/A",
-      "Moderately resistant": "late blight, hollow heart, second growth, shatter bruise, PVA, PVM, PVX, PVS.",
+      "Moderately resistant":
+        "late blight, hollow heart, second growth, shatter bruise, PVA, PVM, PVX, PVS.",
       Susceptible: "PVLR, PVY, common scab, bacterial ring rot, and black leg.",
       "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "russian-blue-5lb", label: "5lb Bag" },
-      { id: "russian-blue-50lb", label: "50lb Box" }
+      { id: "russian-blue-50lb", label: "50lb Box" },
     ],
-    image: [
-      "/images/purple.jpg",
-      "/images/russianBlue1.jpg",
-    ],
+    image: ["/images/purple.jpg", "/images/russianBlue1.jpg"],
   },
   {
     name: "Red Chieftan",
@@ -46,7 +45,7 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "red-chieftan-5lb", label: "5lb Bag" },
-      { id: "red-chieftan-50lb", label: "50lb Box" }
+      { id: "red-chieftan-50lb", label: "50lb Box" },
     ],
     image: [
       "/images/red.jpg",
@@ -58,7 +57,8 @@ const potatoes = [
   {
     name: "Seiglinde",
     id: "german-butter-sieglinde",
-    description: "Sold by Across the Creek Organics as German Butter Potatoes. Oblong, smooth tubers covered with yellow skin and yellow flesh.",
+    description:
+      "Sold by Across the Creek Organics as German Butter Potatoes. Oblong, smooth tubers covered with yellow skin and yellow flesh.",
     maturity: "mid-season",
     tubers:
       'oblong, slightly-flattened, smooth tubers covered with clear yellow skin. Sold by Across the Creek Organics as "German Butter Potatoes" this variety has been a true superstar potato.Loved by chefs and home cooks for its flavour, loved by farmers for it high yield of smooth tubers.',
@@ -73,7 +73,7 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "german-butter-sieglinde-5lb", label: "5lb Bag" },
-      { id: "german-butter-sieglinde-50lb", label: "50lb Box" }
+      { id: "german-butter-sieglinde-50lb", label: "50lb Box" },
     ],
     image: [
       "/images/german.jpg",
@@ -85,7 +85,8 @@ const potatoes = [
   {
     name: "Kennebec",
     id: "kennebec",
-    description: "elliptical to oblong, medium thick, smooth creamy buff skin, shallow eyes, white flesh",
+    description:
+      "elliptical to oblong, medium thick, smooth creamy buff skin, shallow eyes, white flesh",
     maturity: "mid to late-season",
     tubers:
       "elliptical to oblong, medium thick; smooth creamy buff skin; shallow eyes; white flesh. High yielding fast growing variety, widely adapted. Requires close planting (15 to 20 cm between plants) and vine killing to avoid producing oversized and rough tubers. Excellent storage quality. Long dormancy period.",
@@ -102,22 +103,19 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "kennebec-5lb", label: "5lb Bag" },
-      { id: "kennebec-50lb", label: "50lb Box" }
+      { id: "kennebec-50lb", label: "50lb Box" },
     ],
-    image: [
-      "/images/fingerling.jpg",
-      "/images/kennebec1.jpg",
-    ],
+    image: ["/images/fingerling.jpg", "/images/kennebec1.jpg"],
   },
   {
     name: "Russet Norkotah",
     id: "russet",
-    description: "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; white flesh",
+    description:
+      "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; white flesh",
     maturity: "early to mid-season",
     tubers:
       "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; shallow bright golden eyes, fairly numerous; many slightly curved eyebrows; white flesh.",
-    yield:
-      "Medium",
+    yield: "Medium",
     use: "Good for baking; poor to moderate for boiling with some after cooking discoloration; poor for chipping.",
     diseaseInfo: {
       "Field resistant": "N/A",
@@ -129,17 +127,15 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "russet-5lb", label: "5lb Bag" },
-      { id: "russet-50lb", label: "50lb Box" }
+      { id: "russet-50lb", label: "50lb Box" },
     ],
-    image: [
-      "/images/norkotahRusset1.png",
-      "/images/russet.jpg",
-    ],
+    image: ["/images/norkotahRusset1.png", "/images/russet.jpg"],
   },
   {
     name: "Yukon Gold",
     id: "yukon-gold",
-    description: "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
+    description:
+      "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
     maturity: "mid-season",
     tubers:
       "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
@@ -155,17 +151,15 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "yukon-gold-5lb", label: "5lb Bag" },
-      { id: "yukon-gold-50lb", label: "50lb Box" }
+      { id: "yukon-gold-50lb", label: "50lb Box" },
     ],
-    image: [
-      "/images/yukonGold1.jpg",
-      "/images/yukonGold.jpg",
-    ],
+    image: ["/images/yukonGold1.jpg", "/images/yukonGold.jpg"],
   },
   {
     name: "Warba",
     id: "warba",
-    description: "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
+    description:
+      "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
     maturity: "very early-season",
     tubers:
       "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
@@ -181,9 +175,31 @@ const potatoes = [
     },
     salesQuantities: [
       { id: "warba-5lb", label: "5lb Bag" },
-      { id: "warba-50lb", label: "50lb Box" }
+      { id: "warba-50lb", label: "50lb Box" },
     ],
     image: ["/images/warba1.jpg"],
+  },
+  {
+    name: "French Fingerling",
+    id: "fingerling",
+    description:
+      "small, elongated; thin, smooth pink skinned with yellow flesh.",
+    maturity: "late-season",
+    tubers: "small, elongated; thin, smooth pink skinned with yellow flesh.",
+    yield: "High",
+    use: "The French Fingerling is excellent for roasting, boiling, and salads due to its firm texture and buttery flavor. Try parboiling followed by pan-searing for a delicious crispy bite with a creamy interior.",
+    diseaseInfo: {
+      "Field resistant": "N/A",
+      Resistant: "common scab, early blight, verticillium wilt.",
+      "Moderately resistant": "N/A",
+      Susceptible: "late blight, blackleg, mosaic virus.",
+      "Highly Susceptible": "N/A",
+    },
+    salesQuantities: [
+      { id: "fingerling-5lb", label: "5lb Bag" },
+      { id: "fingerling-50lb", label: "50lb Box" },
+    ],
+    image: ["/images/fingerling1.jpg"],
   },
 ];
 
