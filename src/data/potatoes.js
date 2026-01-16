@@ -4,18 +4,18 @@ const potatoes = [
   {
     name: "Russian Blue",
     id: "russian-blue",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "Rich purple skin and blue-purple flesh. oblong tubers with smooth skin and shallow eyes. Similar in texture to Russet varieties.",
     maturity: "late-season",
     tubers:
       "oblong; smooth dark purple with scattered tan skin; shallow eyes, evenly distributed; prominent eyebrows; blue-purple flesh.",
-    yield: "",
-    use: "",
+    yield: "High",
+    use: "These potatoes are great for roasting, baking, mashing, and frying. Their vibrant color also makes them an excellent choice for adding visual appeal to dishes.",
     diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "",
-      "Moderately resistant": "",
-      Susceptible: "",
-      "Highly Susceptible": "",
+      "Field resistant": "N/A",
+      Resistant: "N/A",
+      "Moderately resistant": "late blight, hollow heart, second growth, shatter bruise, PVA, PVM, PVX, PVS.",
+      Susceptible: "PVLR, PVY, common scab, bacterial ring rot, and black leg.",
+      "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "russian-blue-5lb", label: "5lb Bag" },
@@ -29,20 +29,20 @@ const potatoes = [
   {
     name: "Red Chieftan",
     id: "red-chieftan",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "oval to oblong, smooth bright red skin, white flesh",
     maturity: "mid-season",
     tubers:
       "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh. High yielding variety, attractive appearance, widely adapted. Well suited for washing at maturity. Good storability. Medium specific gravity.",
-    yield: "",
+    yield: "High",
     use: " good to excellent for boiling, good for chipping at harvest, excellent for french frying.",
     diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "",
+      "Field resistant": "N/A",
+      Resistant: "N/A",
       "Moderately resistant":
         "late blight, common scab, rhizoctonia, silver scurf, stem-end browning, tuber net necrosis, verticillium wilt.",
       Susceptible:
         "black leg, fusarium dry rot, leaf roll, phoma rot, PVX and PVY.",
-      "Highly Susceptible": "",
+      "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "red-chieftan-5lb", label: "5lb Bag" },
@@ -56,20 +56,20 @@ const potatoes = [
     ],
   },
   {
-    name: "German Butter",
+    name: "Seiglinde",
     id: "german-butter-sieglinde",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "Sold by Across the Creek Organics as German Butter Potatoes. Oblong, smooth tubers covered with yellow skin and yellow flesh.",
     maturity: "mid-season",
     tubers:
       'oblong, slightly-flattened, smooth tubers covered with clear yellow skin. Sold by Across the Creek Organics as "German Butter Potatoes" this variety has been a true superstar potato.Loved by chefs and home cooks for its flavour, loved by farmers for it high yield of smooth tubers.',
-    yield: "",
-    use: "",
+    yield: "High",
+    use: "This flavourful potato holds its shape well when cooked, making it ideal for potato salads, soups, and roasting. Its creamy texture also makes it a great choice for boiling and frying.",
     diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "",
-      "Moderately resistant": "",
-      Susceptible: "",
-      "Highly Susceptible": "",
+      "Field resistant": "N/A",
+      Resistant: "scab, mosaic virus and warts.",
+      "Moderately resistant": "N/A",
+      Susceptible: "N/A",
+      "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "german-butter-sieglinde-5lb", label: "5lb Bag" },
@@ -85,11 +85,11 @@ const potatoes = [
   {
     name: "Kennebec",
     id: "kennebec",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "elliptical to oblong, medium thick, smooth creamy buff skin, shallow eyes, white flesh",
     maturity: "mid to late-season",
     tubers:
-      "elliptical to oblong, medium thick; smooth creamy buff skin; shallow eyes; white flesh. High yielding fast growing variety, widely adapted. Requires close planting (15 to 20 cm between plants) and vine killing to avoid producing oversized and rough tubers. Excellent storage quality. Long dormancy period. High total solids.\nNote: tubers grow green rapidly when exposed to light.",
-    yield: "",
+      "elliptical to oblong, medium thick; smooth creamy buff skin; shallow eyes; white flesh. High yielding fast growing variety, widely adapted. Requires close planting (15 to 20 cm between plants) and vine killing to avoid producing oversized and rough tubers. Excellent storage quality. Long dormancy period.",
+    yield: "High",
     use: "Excellent for boiling, baking, chipping and French frying.",
     diseaseInfo: {
       "Field resistant": "PVA, PVY.",
@@ -110,22 +110,22 @@ const potatoes = [
     ],
   },
   {
-    name: "Norkotah Russet",
+    name: "Russet Norkotah",
     id: "russet",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; white flesh",
     maturity: "early to mid-season",
     tubers:
       "long to slightly oblong, smooth; heavy, dark tan, russeted and netted skin; shallow bright golden eyes, fairly numerous; many slightly curved eyebrows; white flesh.",
     yield:
-      "Medium yielding variety, attractive appearance, uniform tuber size and shape. Wide adaptability. Resistant to hollow heart. Low to medium specific gravity. Good storability. Medium dormancy period.",
+      "Medium",
     use: "Good for baking; poor to moderate for boiling with some after cooking discoloration; poor for chipping.",
     diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "Columbia root-knot nematode. common scab, silver scurf.",
+      "Field resistant": "N/A",
+      Resistant: "Columbia root-knot nematode, common scab, silver scurf.",
       "Moderately resistant": "leaf roll net necrosis, PVY.",
       Susceptible:
         "most viruses, late blight, early blight, verticillium wilt, potato wart.",
-      "Highly Susceptible": "",
+      "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "russet-5lb", label: "5lb Bag" },
@@ -139,19 +139,19 @@ const potatoes = [
   {
     name: "Yukon Gold",
     id: "yukon-gold",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
     maturity: "mid-season",
     tubers:
       "oval, slightly flattened; finely flaked yellowish white skin; shallow pink eyes; light yellow flesh.",
     yield:
       "Medium yielding variety of attractive appearance. Large tubers are slightly susceptible to hollow heart. Excellent storability; long dormancy period. High specific gravity.​",
-    use: "Very good for boiling, baking, and French frying; unsuitable for chipping; retains its yellow flesh color when cooked. Reaction to diseases",
+    use: "Very good for boiling, baking, and French frying; unsuitable for chipping; retains its yellow flesh color when cooked.`",
     diseaseInfo: {
-      "Field resistant": "",
+      "Field resistant": "N/A",
       Resistant: "PVA",
       "Moderately resistant": "leaf roll",
       Susceptible: "common scab, PVY, air pollution.",
-      "Highly Susceptible": "",
+      "Highly Susceptible": "N/A",
     },
     salesQuantities: [
       { id: "yukon-gold-5lb", label: "5lb Bag" },
@@ -165,16 +165,16 @@ const potatoes = [
   {
     name: "Warba",
     id: "warba",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
+    description: "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
     maturity: "very early-season",
     tubers:
       "round; buff skin, frequently with reddish areas around the eyes; deep red eyes; white flesh.",
-    yield: "High yielding variety; low specific gravity.",
+    yield: "High",
     use: "Good for boiling and baking; not suitable for chips.",
     diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "",
-      "Moderately resistant": "",
+      "Field resistant": "N/A",
+      Resistant: "N/A",
+      "Moderately resistant": "N/A",
       Susceptible:
         "leaf roll, blackleg, PVM, PVS, PVX, PVY, common scab, verticillium wilt, late blight, fusarium dry rot.",
       "Highly Susceptible": "rhizoctonia.",
@@ -184,31 +184,6 @@ const potatoes = [
       { id: "warba-50lb", label: "50lb Box" }
     ],
     image: ["/images/warba1.jpg"],
-  },
-  {
-    name: "Potato",
-    id: "potato",
-    description: "oval to oblong, smooth bright red skin; shallow to medium-deep eyes, darker than the skin; white flesh",
-    maturity: "",
-    tubers: "",
-    yield: "",
-    use: "",
-    diseaseInfo: {
-      "Field resistant": "",
-      Resistant: "",
-      "Moderately resistant": "",
-      Susceptible: "",
-      "Highly Susceptible": "",
-    },
-    salesQuantities: [
-      { id: "potato-5lb", label: "5lb Bag" },
-      { id: "potato-50lb", label: "50lb Box" }
-    ],
-    image: [
-      "/images/potato.jpg",
-      "/images/german.jpg",
-      "/images/fingerling.jpg",
-    ],
   },
 ];
 
