@@ -112,11 +112,18 @@
 }
 
 @media (min-width: 768px) {
+  .navbar {
+    margin: auto;
+    padding: 1rem 0.5rem;
+    height: 125px;
+  }
+
   .navbar-content {
     flex-direction: row;
     justify-content: center;
     align-items: center;
     transform: translateX(calc(-38.56px - 1rem));
+    height: 100%;
   }
 
   .logo-and-title {
@@ -503,13 +510,22 @@
   padding: 0 2rem 2rem 2rem;
   gap: 2rem;
   font-size: 0.75rem;
+  line-height: 1.25rem;
+  width: clamp(200px, 75vw, 600px);
+  margin: auto;
 }
 
 .about-flex .about-image {
-  border-radius: 3px;
+  border-radius: 2px;
   border: #000000 1px solid;
   object-fit: cover;
   width: clamp(200px, 75vw, 500px);
+}
+
+@media (min-width: 768px) {
+  .about-flex {
+    font-size: 0.85rem;
+  }
 }
 
 /*===================================================== About =====================================================*/
