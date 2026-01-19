@@ -5,9 +5,11 @@ function Details({ setUserDetails }) {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    emailConfirm: "",
     phone: "",
     message: "",
   });
+  const [emailMatch, setEmailMatch] = useState(true);
 
   const navigate = useNavigate();
 
@@ -22,6 +24,12 @@ function Details({ setUserDetails }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (form.email !== form.emailConfirm) {
+      setEmailMatch(false);
+      alert("Email addresses do not match. Please check and try again.");
+      return;
+    }
+    setEmailMatch(true);
     if (isValid) {
       setUserDetails(form);
       navigate("/confirm-order");
@@ -62,6 +70,21 @@ function Details({ setUserDetails }) {
             pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
             value={form.email}
             onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="emailConfirm">Confirm Email: *</label>
+          <input
+            type="email"
+            id="emailConfirm"
+            name="emailConfirm"
+            required
+            maxLength={100}
+            pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+            value={form.emailConfirm}
+            onChange={handleChange}
+            style={{ color: emailMatch ? undefined : 'red' }}
           />
         </div>
 
