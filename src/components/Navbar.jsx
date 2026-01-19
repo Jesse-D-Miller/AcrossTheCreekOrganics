@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useCart from "../context/useCart.js";
 
 function Navbar() {
+  const { cart } = useCart();
+
   return (
     <nav className="navbar">
       <div className="navbar-content">
@@ -37,7 +40,7 @@ function Navbar() {
                 <Link to="/contact">Contact Us</Link>
               </li>
               <li>
-                <Link to="/order">Selected Items</Link>
+                <Link to="/order">Selected Items ({cart.length})</Link>
               </li>
             </ul>
           </div>
