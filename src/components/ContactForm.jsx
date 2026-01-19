@@ -2,17 +2,29 @@ import { useState } from "react";
 
 function ContactForm() {
   const [sending, setSending] = useState(false);
+  const [emailMatch, setEmailMatch] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (sending) return;
 
+    const form = e.target;
+    const email = form.email.value.trim();
+    const emailConfirm = form.emailConfirm.value.trim();
+
+    if (email !== emailConfirm) {
+      alert("Email addresses do not match. Please check and try again.");
+      setEmailMatch(false);
+      return;
+    } else {
+      setEmailMatch(true);
+    }
+
     setSending(true);
 
-    const form = e.target;
     const formData = {
       name: form.name.value.trim(),
-      email: form.email.value.trim(),
+      email,
       phone: form.number.value.trim(),
       message: form.message.value.trim(),
     };
@@ -58,6 +70,17 @@ function ContactForm() {
         <div>
           <label htmlFor="email">Email: *</label>
           <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label htmlFor="emailConfirm">Confirm Email: *</label>
+          <input
+            type="email"
+            id="emailConfirm"
+            name="emailConfirm"
+            required
+            style={{ color: emailMatch ? undefined : 'red' }}
+          />
         </div>
 
         <div>
