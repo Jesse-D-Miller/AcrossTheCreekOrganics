@@ -69,12 +69,18 @@ export default async function handler(req, res) {
   try {
     const { userDetails, cart } = req.body || {};
 
+
     const name = cleanText(userDetails?.name, 80);
     const email = cleanEmail(userDetails?.email);
     const phone = cleanText(userDetails?.phone, 40);
     const message = cleanText(userDetails?.message, 1000);
+    const country = cleanText(userDetails?.country, 40);
+    const province = cleanText(userDetails?.province, 40);
+    const address1 = cleanText(userDetails?.address1, 100);
+    const address2 = cleanText(userDetails?.address2, 100);
+    const postalCode = cleanText(userDetails?.postalCode, 20);
 
-    if (!name || !email || !Array.isArray(cart) || cart.length === 0) {
+    if (!name || !email || !address1 || !country || !postalCode || !Array.isArray(cart) || cart.length === 0) {
       return res.status(400).json({ error: "Invalid payload" });
     }
 
@@ -105,19 +111,23 @@ export default async function handler(req, res) {
       .join("\n");
 
     const text = `
-New order inquiry
+  New order inquiry
 
-Customer:
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "N/A"}
+  Customer:
+  Name: ${name}
+  Email: ${email}
+  Phone: ${phone || "N/A"}
+  Country: ${country}
+  ${country === "Canada" || country === "United States" ? `Province/State: ${province || "N/A"}\n` : ""}Address 1: ${address1}
+  Address 2: ${address2 || "N/A"}
+  Postal Code: ${postalCode}
 
-Message:
-${message || "N/A"}
+  Message:
+  ${message || "N/A"}
 
-Items:
-${orderItems}
-`.trim();
+  Items:
+  ${orderItems}
+  `.trim();
 
     const msg = {
       to: process.env.ORDER_RECEIVER_EMAIL, // business owner email

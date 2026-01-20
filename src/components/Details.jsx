@@ -7,8 +7,83 @@ function Details({ setUserDetails }) {
     email: "",
     emailConfirm: "",
     phone: "",
+    country: "Canada",
+    province: "",
+    address1: "",
+    address2: "",
+    postalCode: "",
     message: "",
   });
+    // Province/state options for Canada and US
+    const provinceOptions = {
+      Canada: [
+        "Alberta",
+        "British Columbia",
+        "Manitoba",
+        "New Brunswick",
+        "Newfoundland and Labrador",
+        "Northwest Territories",
+        "Nova Scotia",
+        "Nunavut",
+        "Ontario",
+        "Prince Edward Island",
+        "Quebec",
+        "Saskatchewan",
+        "Yukon"
+      ],
+      "United States": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ]
+    };
   const [emailMatch, setEmailMatch] = useState(true);
 
   const navigate = useNavigate();
@@ -96,6 +171,77 @@ function Details({ setUserDetails }) {
             name="phone"
             maxLength={30}
             value={form.phone}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="country">Country: *</label>
+          <select
+            id="country"
+            name="country"
+            required
+            value={form.country}
+            onChange={handleChange}
+          >
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        {(form.country === "Canada" || form.country === "United States") && (
+          <div>
+            <label htmlFor="province">Province/State: *</label>
+            <select
+              id="province"
+              name="province"
+              required
+              value={form.province}
+              onChange={handleChange}
+            >
+              <option value="">Select...</option>
+              {provinceOptions[form.country].map((prov) => (
+                <option key={prov} value={prov}>{prov}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        <div>
+          <label htmlFor="address1">Address Line 1: *</label>
+          <input
+            type="text"
+            id="address1"
+            name="address1"
+            required
+            maxLength={100}
+            value={form.address1}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="address2">Address Line 2:</label>
+          <input
+            type="text"
+            id="address2"
+            name="address2"
+            maxLength={100}
+            value={form.address2}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="postalCode">Postal Code: *</label>
+          <input
+            type="text"
+            id="postalCode"
+            name="postalCode"
+            required
+            maxLength={20}
+            value={form.postalCode}
             onChange={handleChange}
           />
         </div>
