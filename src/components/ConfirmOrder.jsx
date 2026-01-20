@@ -49,6 +49,25 @@ function ConfirmOrder({ userDetails }) {
           <strong>Phone:</strong> {userDetails.phone}
         </p>
         <p>
+          <strong>Country:</strong> {userDetails.country}
+        </p>
+        {(userDetails.country === "Canada" || userDetails.country === "United States") && (
+          <p>
+            <strong>Province/State:</strong> {userDetails.province}
+          </p>
+        )}
+        <p>
+          <strong>Address 1:</strong> {userDetails.address1}
+        </p>
+        {userDetails.address2 && (
+          <p>
+            <strong>Address 2:</strong> {userDetails.address2}
+          </p>
+        )}
+        <p>
+          <strong>Postal Code:</strong> {userDetails.postalCode}
+        </p>
+        <p>
           <strong>Message:</strong> {userDetails.message}
         </p>
       </div>

@@ -117,13 +117,20 @@ export default async function handler(req, res) {
   Name: ${name}
   Email: ${email}
   Phone: ${phone || "N/A"}
+
+  -------------------------------------------------------------
+
   Country: ${country}
   ${country === "Canada" || country === "United States" ? `Province/State: ${province || "N/A"}\n` : ""}Address 1: ${address1}
   Address 2: ${address2 || "N/A"}
   Postal Code: ${postalCode}
 
+  -------------------------------------------------------------
+
   Message:
   ${message || "N/A"}
+
+  -------------------------------------------------------------
 
   Items:
   ${orderItems}
