@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useCart from "../context/useCart";
+import { useEffect } from "react";
 
 function Details({ setUserDetails }) {
   const [form, setForm] = useState({
@@ -14,79 +16,89 @@ function Details({ setUserDetails }) {
     postalCode: "",
     message: "",
   });
-    // Province/state options for Canada and US
-    const provinceOptions = {
-      Canada: [
-        "Alberta",
-        "British Columbia",
-        "Manitoba",
-        "New Brunswick",
-        "Newfoundland and Labrador",
-        "Northwest Territories",
-        "Nova Scotia",
-        "Nunavut",
-        "Ontario",
-        "Prince Edward Island",
-        "Quebec",
-        "Saskatchewan",
-        "Yukon"
-      ],
-      "United States": [
-        "Alabama",
-        "Alaska",
-        "Arizona",
-        "Arkansas",
-        "California",
-        "Colorado",
-        "Connecticut",
-        "Delaware",
-        "Florida",
-        "Georgia",
-        "Hawaii",
-        "Idaho",
-        "Illinois",
-        "Indiana",
-        "Iowa",
-        "Kansas",
-        "Kentucky",
-        "Louisiana",
-        "Maine",
-        "Maryland",
-        "Massachusetts",
-        "Michigan",
-        "Minnesota",
-        "Mississippi",
-        "Missouri",
-        "Montana",
-        "Nebraska",
-        "Nevada",
-        "New Hampshire",
-        "New Jersey",
-        "New Mexico",
-        "New York",
-        "North Carolina",
-        "North Dakota",
-        "Ohio",
-        "Oklahoma",
-        "Oregon",
-        "Pennsylvania",
-        "Rhode Island",
-        "South Carolina",
-        "South Dakota",
-        "Tennessee",
-        "Texas",
-        "Utah",
-        "Vermont",
-        "Virginia",
-        "Washington",
-        "West Virginia",
-        "Wisconsin",
-        "Wyoming"
-      ]
-    };
+
+  const { cart } = useCart();
+
+  // Province/state options for Canada and US
+  const provinceOptions = {
+    Canada: [
+      "Alberta",
+      "British Columbia",
+      "Manitoba",
+      "New Brunswick",
+      "Newfoundland and Labrador",
+      "Northwest Territories",
+      "Nova Scotia",
+      "Nunavut",
+      "Ontario",
+      "Prince Edward Island",
+      "Quebec",
+      "Saskatchewan",
+      "Yukon",
+    ],
+    "United States": [
+      "Alabama",
+      "Alaska",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Maine",
+      "Maryland",
+      "Massachusetts",
+      "Michigan",
+      "Minnesota",
+      "Mississippi",
+      "Missouri",
+      "Montana",
+      "Nebraska",
+      "Nevada",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "New York",
+      "North Carolina",
+      "North Dakota",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Vermont",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Wisconsin",
+      "Wyoming",
+    ],
+  };
   const [emailMatch, setEmailMatch] = useState(true);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cart.length <= 0) {
+      // If cart is empty, redirect to home page
+      navigate("/");
+    }
+  }, [cart]);
 
   const handleChange = (e) => {
     setForm({
@@ -159,7 +171,7 @@ function Details({ setUserDetails }) {
             pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
             value={form.emailConfirm}
             onChange={handleChange}
-            style={{ color: emailMatch ? undefined : 'red' }}
+            style={{ color: emailMatch ? undefined : "red" }}
           />
         </div>
 
@@ -202,7 +214,9 @@ function Details({ setUserDetails }) {
             >
               <option value="">Select...</option>
               {provinceOptions[form.country].map((prov) => (
-                <option key={prov} value={prov}>{prov}</option>
+                <option key={prov} value={prov}>
+                  {prov}
+                </option>
               ))}
             </select>
           </div>

@@ -1,6 +1,7 @@
 import useCart from "../context/useCart";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function ConfirmOrder({ userDetails }) {
   const [sending, setSending] = useState(false);
@@ -8,6 +9,13 @@ function ConfirmOrder({ userDetails }) {
   const { cart, clearCart } = useCart();
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cart.length <= 0) {
+      // If cart is empty, redirect to home page
+      navigate("/");
+    }
+  }, [cart]);
 
   const handleConfirm = async () => {
     if (sending) return;
@@ -51,7 +59,8 @@ function ConfirmOrder({ userDetails }) {
         <p>
           <strong>Country:</strong> {userDetails.country}
         </p>
-        {(userDetails.country === "Canada" || userDetails.country === "United States") && (
+        {(userDetails.country === "Canada" ||
+          userDetails.country === "United States") && (
           <p>
             <strong>Province/State:</strong> {userDetails.province}
           </p>
@@ -79,7 +88,9 @@ function ConfirmOrder({ userDetails }) {
           </div>
         ))}
       </div>
-      <button onClick={handleConfirm} disabled={sending || cart.length === 0}>{sending ? "Sending..." : "Send Request"}</button>
+      <button onClick={handleConfirm} disabled={sending || cart.length === 0}>
+        {sending ? "Sending..." : "Send Request"}
+      </button>
     </div>
   );
 }
