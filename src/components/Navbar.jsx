@@ -10,7 +10,7 @@ function Navbar() {
         <div className="desktop-logo">
           <Link to="/">
             <img
-              src="/images/accrossthecreek_logo.png"
+              src="/images/FinalAcrossTheCreekOrganicsLogo.png"
               alt="Across The Creek Organics Logo"
               className="atco-logo-desktop"
             />
@@ -21,7 +21,7 @@ function Navbar() {
           <div className="logo-and-title">
             <Link to="/">
               <img
-                src="/images/accrossthecreek_logo.png"
+                src="/images/FinalAcrossTheCreekOrganicsLogo.png"
                 alt="Across The Creek Organics Logo"
                 className="atco-logo"
               />
